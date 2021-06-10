@@ -1,0 +1,195 @@
+.convert-component {
+  margin: 30px auto;
+}
+.convert-component:last-child {
+  margin-bottom: 0;
+}
+.convert-component__form {
+  padding: 25px 20px;
+  background: #b6d5d6;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .convert-component__form {
+    padding: 40px;
+  }
+}
+.convert-component__input-group {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .convert-component__input-group {
+    flex-direction: row;
+  }
+}
+.convert-component__input-group.reverse {
+  flex-direction: column-reverse;
+}
+@media (min-width: 768px) {
+  .convert-component__input-group.reverse {
+    flex-direction: row-reverse;
+  }
+}
+.convert-component__form-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .convert-component__form-group {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+.convert-component__input-box {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.convert-component .select2-container--default .select2-selection--single {
+  border: none;
+}
+.convert-component__form-control::placeholder {
+  color: #BBB;
+}
+.convert-component__form-control, .convert-component .select2-selection__rendered {
+  font-weight: 700 !important;
+  text-align: left !important;
+  border-color: #fff !important;
+  border-radius: 2px 0 0 2px !important;
+  border-right-color: #e2e2e2 !important;
+  font-size: 16px !important;
+  height: 50px !important;
+  padding: 10px 15px !important;
+  line-height: 30px !important;
+  width: 100% !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  display: block !important;
+  color: #333 !important;
+}
+@media (min-width: 992px) {
+  .convert-component__form-control, .convert-component .select2-selection__rendered {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+}
+.convert-component .select2-selection__rendered {
+  padding-right: 25px !important;
+}
+.convert-component .select2-selection__arrow, .convert-component .select2-selection--single {
+  height: 50px !important;
+}
+.convert-component__dropdown {
+  position: static;
+}
+.convert-component .select2-container {
+  left: 0 !important;
+  width: 100%;
+}
+.convert-component .select2-dropdown {
+  border-color: #e2e2e2 !important;
+  border-top: 1px #e2e2e2 solid !important;
+}
+.convert-component__direction-switch {
+  text-align: center;
+}
+.convert-component__direction-switch span {
+  padding: 15px;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+@media (min-width: 768px) {
+  .convert-component__direction-switch span {
+    padding: 14px 28px;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
+.convert-component__direction-switch svg {
+  display: inline-block;
+  vertical-align: top;
+  fill: currentColor;
+}
+.convert-component__button {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: #40c781;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.convert-component__button:hover {
+  background: #35a76e;
+}
+.convert-component__button:active {
+  background: #21935a;
+  box-shadow: 0 3px #21935a inset;
+}
+.convert-component__button.disabled {
+  opacity: 0.5;
+}
+
+.recently-converted {
+  margin-bottom: 40px;
+  padding: 28px 0;
+  border: 1px solid #eeeded;
+  border-radius: 2px;
+}
+.recently-converted__title {
+  padding-left: 28px;
+  padding-right: 28px;
+  margin-top: 0;
+  margin-bottom: 17px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.recently-converted__column {
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .recently-converted__column {
+    column-count: 2;
+  }
+}
+.recently-converted__column li {
+  padding: 10px 49px 10px 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11px' height='11px' viewBox='0 0 11 11'%3E%3Cpath fill='%23868686' d='M5.5.03C2.47.03 0 2.489 0 5.513v.41h.846v-.41A4.64 4.64 0 0 1 5.5.876c1.382 0 2.614.605 3.464 1.557l-.955.952H11V.403L9.562 1.834A5.478 5.478 0 0 0 5.5.03zm4.654 5.047V5.5A4.648 4.648 0 0 1 5.5 10.154 4.623 4.623 0 0 1 2.026 8.58l.965-.966H0v2.992l1.428-1.428A5.479 5.479 0 0 0 5.5 11C8.534 11 11 8.534 11 5.5v-.423h-.846z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 28px center;
+}
+.recently-converted__convert-time {
+  font-size: 11px;
+  color: #868686;
+}
+.recently-converted__dots {
+  margin: 0 1px 5px 6px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  border-bottom: 1px dotted #868686;
+}
+
+/*# sourceMappingURL=cryptocurrency-converter-public.css.map */
