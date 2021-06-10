@@ -16,22 +16,24 @@ class Cryptocurrency_Converter_Admin {
 		add_action('admin_init', array( $this, 'registerAndBuildFields' ));
         $this->key = get_option('cryptocurrency_converter_coinmarketcap_key');
 	}
-
+    //fix this part for update sql
 	private function insert_currency_data($data) {
         global $wpdb;
-        $sql = "TRUNCATE TABLE " . $wpdb->prefix . CCC_TABLE_CURRENCY;
-        $wpdb->get_results($sql);
+        if (is_array($data) && count($data) > 0) {
+            $sql = "TRUNCATE TABLE " . $wpdb->prefix . CCC_TABLE_CURRENCY;
+            $wpdb->get_results($sql);
 
-        foreach ($data as $cur) {
-            $wpdb->insert($wpdb->prefix . CCC_TABLE_CURRENCY, array(
-                    'cur_id'   => $cur['id'],
-                    'cur_symbol'  => $cur['symbol'],
-                    'cmc_rank' => $cur['cmc_rank'],
-                    'cur_name'=> $cur['name'],
-                    'usd'   => $cur['quote']['USD']['price'] ?? '',
-                    'time_action'   => current_time('mysql'),
-                )
-            );
+            foreach ($data as $cur) {
+                $wpdb->insert($wpdb->prefix . CCC_TABLE_CURRENCY, array(
+                        'cur_id' => $cur['id'],
+                        'cur_symbol' => $cur['symbol'],
+                        'cmc_rank' => $cur['cmc_rank'],
+                        'cur_name' => $cur['name'],
+                        'usd' => $cur['quote']['USD']['price'] ?? '',
+                        'time_action' => current_time('mysql'),
+                    )
+                );
+            }
         }
     }
 
@@ -58,7 +60,7 @@ class Cryptocurrency_Converter_Admin {
     }
 
     public function activation_cron_task() {
-        if( ! wp_next_scheduled( 'get_currency_data' ) && $this->key) {
+        if( ! wp_next_scheduled( 'get_currency_data_event' ) && $this->key) {
             wp_schedule_event( time(), 'five_min', 'get_currency_data_event');
         }
     }
